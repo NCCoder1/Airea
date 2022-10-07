@@ -1,7 +1,7 @@
 import { onMount } from "solid-js";
 // OLD STUFF TO BE ADDED LATER: <option class="bg-zinc-800 light:bg-zinc-300" value="aero">Aero</option>(Select proxy)
 export default function Settings () {
-  onMount(async () => {<option class="bg-zinc-800 light:bg-zinc-300" value="aero">Aero</option>
+  onMount(async () => {<option class="bg-[#845247] light:bg-zinc-300" value="aero">Aero</option>
     let settings = window.getSettings();
     // search engine
     let searchEngine = document.getElementById("searchEngine") as HTMLSelectElement;
@@ -102,7 +102,7 @@ export default function Settings () {
   }
 
   return (
-    <div id="settings" class="top-0 fixed w-full h-full bg-black bg-opacity-50 hidden z-50" onclick={hideSettings}>
+    <div id="settings" class="top-0 fixed w-full h-full bg-[#845247] bg-opacity-50 hidden z-50" onclick={hideSettings}>
       <div class="fixed right-0 top-0 w-full sm:w-3/4 md:w-1/2 lg:w-1/3 h-full bg-zinc-900 light:bg-zinc-200 z-20 overflow-auto">
         <div class="flex">
         <i class="fa-light fa-arrow-left m-4 p-1 text-lg" id="settings-close" onclick={hideSettings}></i>
@@ -110,74 +110,74 @@ export default function Settings () {
         </div>
         <div class="flex justify-center p-4 flex-col">
 
-          <div class="bg-zinc-800 light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
+          <div class="bg-[#807f78] light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
             <h2 class="p-4">Search Engine</h2>
-            <hr class="border-zinc-700 light:border-zinc-400"/>
+            <hr class="border-[#79d3d3] light:border-zinc-400"/>
             <div class="select-wrapper">
               <i class="fa-light fa-angle-down"></i>
               <select id="searchEngine" class="py-4 px-3 bg-transparent w-full focus:outline-none text-base appearance-none" onchange={updateSettings}>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="google">Google</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="bing">Bing</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="duckduckgo">Duck Duck Go</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="brave">Brave</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="yahoo">Yahoo</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="google">Google</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="bing">Bing</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="duckduckgo">Duck Duck Go</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="brave">Brave</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="yahoo">Yahoo</option>
               </select>
             </div>
           </div>
 
-          <div class="bg-zinc-800 light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
+          <div class="bg-[#807f78] light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
             <h2 class="p-4">Proxy</h2>
-            <hr class="border-zinc-700 light:border-zinc-400"/>
+            <hr class="border-[#79d3d3] light:border-zinc-400"/>
             <div class="select-wrapper">
               <i class="fa-light fa-angle-down"></i>
               <select id="proxy" class="py-4 px-3 bg-transparent w-full focus:outline-none text-base appearance-none" onchange={updateSettings}>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="uv">Ultraviolet</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="stomp">Stomp</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="dip">DIP</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="osana">Osana (BETA)</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="uv">Ultraviolet</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="stomp">Stomp</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="dip">DIP</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="osana">Osana (BETA)</option>
               </select>
             </div>
           </div>
 
-          <div class="bg-zinc-800 light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
+          <div class="bg-[#807f78] light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
             <h2 class="p-4">Theme</h2>
-            <hr class="border-zinc-700 light:border-zinc-400"/>
+            <hr class="border-[#79d3d3] light:border-zinc-400"/>
             <div class="select-wrapper">
               <i class="fa-light fa-angle-down"></i>
               <select id="theme" class="py-4 px-3 bg-transparent w-full focus:outline-none text-base appearance-none" onchange={updateSettings}>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="dark">Dark</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="light">Light</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="dark">Dark</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="light">Light</option>
               </select>
             </div>
           </div>
 
-          <div class="bg-zinc-800 light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
+          <div class="bg-[#807f78] light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
             <h2 class="p-4">Display</h2>
-            <hr class="border-zinc-700 light:border-zinc-400"/>
+            <hr class="border-[#79d3d3] light:border-zinc-400"/>
             <div class="select-wrapper">
               <i class="fa-light fa-angle-down"></i>
               <select id="display" class="py-4 px-3 bg-transparent w-full focus:outline-none text-base appearance-none" onchange={updateSettings}>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="default">Default</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="standalone">Standalone</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="default">Default</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="standalone">Standalone</option>
               </select>
             </div>
           </div>
 
-          <div class="bg-zinc-800 light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
+          <div class="bg-[#807f78] light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
             <h2 class="p-4">Tab Cloak</h2>
-            <hr class="border-zinc-700 light:border-zinc-400"/>
+            <hr class="border-[#79d3d3] light:border-zinc-400"/>
             <div class="select-wrapper">
               <i class="fa-light fa-angle-down"></i>
               <select id="tabCloak" class="py-4 px-3 bg-transparent w-full focus:outline-none text-base appearance-none" onchange={updateSettings}>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="none">None</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="about:blank">About Blank</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="none">None</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="about:blank">About Blank</option>
               </select>
             </div>
           </div>
 
-          <div class="bg-zinc-800 light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
+          <div class="bg-[#807f78] light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
             <h2 class="p-4">Shortcuts</h2>
-            <hr class="border-zinc-700 light:border-zinc-400"/>
+            <hr class="border-[#79d3d3] light:border-zinc-400"/>
             <div id="shortcuts">
 
             </div>
