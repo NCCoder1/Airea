@@ -1,6 +1,6 @@
 import { onMount } from "solid-js";
 import Particles from "solid-particles";
-import config from "./config.json";
+//import config from "./config.json";
 
 declare global {
   interface Window {
