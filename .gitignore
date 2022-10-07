@@ -4,6 +4,9 @@ dist
 .vercel
 .netlify
 netlify
+.vscode/
+.vscode
+/.vscode
 
 # dependencies
 /node_modules

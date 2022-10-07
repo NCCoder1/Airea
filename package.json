@@ -1,6 +1,6 @@
 {
-  "name": "zeno",
-  "description": "A proxy front-end submission for TN's proxathon.",
+  "name": "Unblocked-Haven",
+  "description": "A fork of Zeno, a proxy submission for TN's proxathon, this builds upon that and is renamed to Airea.",
   "version": "0.0.1",
   "scripts": {
     "dev": "solid-start dev",
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@tomphttp/bare-server-node": "^1.0.2-beta-readme5",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "solid-particles": "^2.3.3"
   }
 }

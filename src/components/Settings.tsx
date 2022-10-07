@@ -1,7 +1,7 @@
 import { onMount } from "solid-js";
-
+// OLD STUFF TO BE ADDED LATER: <option class="bg-zinc-800 light:bg-zinc-300" value="aero">Aero</option>(Select proxy)
 export default function Settings () {
-  onMount(async () => {
+  onMount(async () => {<option class="bg-zinc-800 light:bg-zinc-300" value="aero">Aero</option>
     let settings = window.getSettings();
     // search engine
     let searchEngine = document.getElementById("searchEngine") as HTMLSelectElement;
@@ -133,9 +133,8 @@ export default function Settings () {
               <select id="proxy" class="py-4 px-3 bg-transparent w-full focus:outline-none text-base appearance-none" onchange={updateSettings}>
                 <option class="bg-zinc-800 light:bg-zinc-300" value="uv">Ultraviolet</option>
                 <option class="bg-zinc-800 light:bg-zinc-300" value="stomp">Stomp</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="osana">Osana</option>
                 <option class="bg-zinc-800 light:bg-zinc-300" value="dip">DIP</option>
-                <option class="bg-zinc-800 light:bg-zinc-300" value="aero">Aero</option>
+                <option class="bg-zinc-800 light:bg-zinc-300" value="osana">Osana (BETA)</option>
               </select>
             </div>
           </div>

@@ -297,7 +297,7 @@ const defaultSettings = {
   display: "default",
   tabCloak: "none",
   shortcuts: {
-    "discord": "https://discord.com/app",
+    "discord": "https://discord.com/login",
     "google": "https://www.google.com/",
     "youtube": "https://www.youtube.com/",
     "reddit": "https://www.reddit.com/"
