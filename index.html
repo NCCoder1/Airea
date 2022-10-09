@@ -12,7 +12,30 @@
     <meta property="og:description" content="A fork of Zeno, a proxy submission for TN's proxathon, this builds upon that and is renamed to Airea." />
 
     <meta name="keywords" content="airea" />
-    
+    <style>
+      #particles-js canvas {
+        display: block;
+        vertical-align: bottom;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+        -webkit-transition: opacity .8s ease, -webkit-transform 1.4s ease;
+        transition: opacity .8s ease, transform 1.4s ease
+      }
+
+      #particles-js {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: -10;
+        top: 0;
+        left: 0
+        }
+      </style>
+      <div id="particles-js"></div>
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script type="module" src="./particles.js" defer></script>  
     <script src="/uv/uv.bundle.js" defer></script>
     <script src="/uv/uv.config.js" defer></script>
     <script src="/~osana/osana.bundle.js" defer></script>

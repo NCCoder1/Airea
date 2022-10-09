@@ -26,6 +26,7 @@
   "dependencies": {
     "@tomphttp/bare-server-node": "^1.0.2-beta-readme5",
     "express": "^4.18.1",
+    "particles.js": "^2.0.0",
     "solid-particles": "^2.3.3"
   }
 }

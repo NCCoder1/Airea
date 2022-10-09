@@ -1,7 +1,4 @@
 import { onMount } from "solid-js";
-import Particles from "solid-particles";
-//import config from "./config.json";
-
 declare global {
   interface Window {
     inputActive: boolean;
@@ -19,7 +16,7 @@ declare var __uv$config: any;
 export default function Home() {
   onMount(async () => {
     let search: HTMLInputElement = document.getElementById("search") as HTMLInputElement;
-    
+
     search.addEventListener("focus", () => {
       window.inputActive = true;
       if (window.suggestions[0]) document.getElementById("suggestion-container")?.classList?.remove("hidden");
@@ -43,7 +40,7 @@ export default function Home() {
         <div class="w-11/12 sm:w-5/6 md:w-2/5 lg:w-1/3 rounded-lg bg-[#845247] light:bg-zinc-300 transition-all light:font-normal">
           <input id="search" class="py-2 px-3 text-lg bg-transparent w-full focus:outline-none" type="text" placeholder="Search the web" oninput={window.updateSuggestions} />
           <div id="suggestion-container" class="w-full hidden">
-            <hr class="border-[#845247] light:border-zinc-400"/>
+            <hr class="border-[#845247] light:border-zinc-400" />
             <div id="suggestions">
             </div>
           </div>
