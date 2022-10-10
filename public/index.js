@@ -275,7 +275,7 @@ window.openUrl = (url) => {
     `;
     win.document.head.appendChild(style);
     let arc = win.document.createElement("script");
-    arc.src = "https://arc.io/widget.min.js#vE8nfkNT";
+    arc.src = "https://arc.io/widget.min.js#YWiiSSUE";
     arc.async = true;
     win.document.head.appendChild(arc);
     let iframe = win.document.createElement("iframe");
