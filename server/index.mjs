@@ -13,7 +13,6 @@ const server = createServer(app);
 const bareServer = BareServer(config.bare);
 
 const blacklist = [
-  "accounts.google.com",
   "netflix.com",
   "www.netflix.com"
 ];
