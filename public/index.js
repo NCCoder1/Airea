@@ -44,6 +44,9 @@ const searchEngines = {
       if (queries && queries[0]) values.push(...[...queries].map(x => x.getAttribute("k")));
       return values;
     }
+  },
+  searxng: {
+    generateSearchUrl: q => `https://search.motortruck1221.tech/search?q=${q}`
   }
 }
 

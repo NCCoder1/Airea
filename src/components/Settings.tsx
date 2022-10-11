@@ -121,6 +121,7 @@ export default function Settings () {
                 <option class="bg-[#807f78] light:bg-zinc-300" value="duckduckgo">Duck Duck Go</option>
                 <option class="bg-[#807f78] light:bg-zinc-300" value="brave">Brave</option>
                 <option class="bg-[#807f78] light:bg-zinc-300" value="yahoo">Yahoo</option>
+                <option class="bg-[#807f78] light:bg-zinc-300" value="searxng">Searxng</option>
               </select>
             </div>
           </div>
@@ -175,6 +176,7 @@ export default function Settings () {
             </div>
           </div>
 
+          {/* TODO: Make shortcuts better lookin */}
           <div class="bg-[#807f78] light:bg-zinc-300 w-full rounded-lg text-lg shadow-md mb-5">
             <h2 class="p-4">Shortcuts</h2>
             <hr class="border-[#79d3d3] light:border-zinc-400"/>
