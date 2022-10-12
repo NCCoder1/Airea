@@ -1,4 +1,5 @@
 // Search Engines
+import alertify from 'alertify';
 const searchEngines = {
   google: {
     generateSuggestUrl: q => `https://www.google.com/complete/search?client=gws-wiz&q=${q}`,
