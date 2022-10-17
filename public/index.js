@@ -120,39 +120,39 @@ window.proxies = {
       }
     }
   },
-  osana: {
-    sw: "/osana~sw.js",
-    scope: __osana$config.prefix,
-    generateUrl (string) {
-      let settings = getSettings();
-      return proxies.osana.scope + __osana$config.codec.encode(parseValue(settings.shortcuts && settings.shortcuts[string.trim()] ? settings.shortcuts[string.trim()] : string));
-    },
-    navigate (value) {
-      if ("serviceWorker" in navigator) {
-        document.getElementById("loading").classList.remove("hidden");
-        navigator.serviceWorker.register(proxies.osana.sw, {
-          scope: proxies.osana.scope
-        }).then(() => {
-          openUrl(proxies.osana.generateUrl(value));
-        }).catch((e) => {
-          document.getElementById("loading").classList.add("hidden");
-          document.getElementById("error").classList.remove("hidden");
-          document.getElementById("error").innerText = `Error: ${e.message}`;
-        });
-      } else {
-        alert("Service workers are not supported in this browser.");
-      }
-    },
-    register () {
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register(proxies.osana.sw, {
-          scope: proxies.osana.scope
-        }).catch(alert);
-      } else {
-        alert("Service workers are not supported in this browser.");
-      }
-    }
-  },
+  // osana: {
+  //   sw: "/osana~sw.js",
+  //   scope: __osana$config.prefix,
+  //   generateUrl (string) {
+  //     let settings = getSettings();
+  //     return proxies.osana.scope + __osana$config.codec.encode(parseValue(settings.shortcuts && settings.shortcuts[string.trim()] ? settings.shortcuts[string.trim()] : string));
+  //   },
+  //   navigate (value) {
+  //     if ("serviceWorker" in navigator) {
+  //       document.getElementById("loading").classList.remove("hidden");
+  //       navigator.serviceWorker.register(proxies.osana.sw, {
+  //         scope: proxies.osana.scope
+  //       }).then(() => {
+  //         openUrl(proxies.osana.generateUrl(value));
+  //       }).catch((e) => {
+  //         document.getElementById("loading").classList.add("hidden");
+  //         document.getElementById("error").classList.remove("hidden");
+  //         document.getElementById("error").innerText = `Error: ${e.message}`;
+  //       });
+  //     } else {
+  //       alert("Service workers are not supported in this browser.");
+  //     }
+  //   },
+  //   register () {
+  //     if ("serviceWorker" in navigator) {
+  //       navigator.serviceWorker.register(proxies.osana.sw, {
+  //         scope: proxies.osana.scope
+  //       }).catch(alert);
+  //     } else {
+  //       alert("Service workers are not supported in this browser.");
+  //     }
+  //   }
+  // },
   dip: {
     sw: "/dip~sw.js",
     scope: "/~dip/",

@@ -135,7 +135,8 @@ export default function Settings () {
                 <option class="bg-[#807f78] light:bg-zinc-300" value="uv">Ultraviolet</option>
                 <option class="bg-[#807f78] light:bg-zinc-300" value="stomp">Stomp</option>
                 <option class="bg-[#807f78] light:bg-zinc-300" value="dip">DIP</option>
-                <option class="bg-[#807f78] light:bg-zinc-300" value="osana">Osana (BETA)</option>
+                {/* TODO: add aero back */}
+                {/* <option class="bg-[#807f78] light:bg-zinc-300" value="osana">Osana (BETA)</option> */}
               </select>
             </div>
           </div>
