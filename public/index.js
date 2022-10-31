@@ -295,7 +295,7 @@ window.openUrl = (url) => {
 // Settings
 const defaultSettings = {
   searchEngine: "google",
-  proxy: "uv",
+  proxy: "dip",
   theme: "dark",
   display: "default",
   tabCloak: "none",
@@ -303,7 +303,7 @@ const defaultSettings = {
     "discord": "https://discord.com/login",
     "google": "https://www.google.com/",
     "youtube": "https://www.youtube.com/",
-    "reddit": "https://www.reddit.com/"
+    "reddit": "https://www.reddit.com/",
   }
 }
 
