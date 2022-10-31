@@ -303,7 +303,7 @@ const defaultSettings = {
     "discord": "https://discord.com/login",
     "google": "https://www.google.com/",
     "youtube": "https://www.youtube.com/",
-    "reddit": "https://www.reddit.com/",
+    "reddit": "https://www.reddit.com/"
   }
 }
 
