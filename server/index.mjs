@@ -1,47 +1,100 @@
-import BareServer from "@tomphttp/bare-server-node";
+import createBareServer from "@tomphttp/bare-server-node";
 import express from "express";
 import { createServer } from "node:http";
+// import { publicPath } from "ultraviolet-static";
+import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
+import { join } from "node:path";
 import path from "node:path";
-
-const config = {
-  port: process.env.PORT || 3001,
-  bare: "/bare/"
-}
-const __dirname = path.resolve();
+const bare = createBareServer("/bare/");
 const app = express();
-const server = createServer(app);
-const bareServer = BareServer(config.bare);
+const __dirname = path.resolve();
 
-const blacklist = [
-  "netflix.com",
-  "www.netflix.com"
-];
+// Load our publicPath first and prioritize it over UV.
+app.use(express.static(join(__dirname, "dist")));
+// Load vendor files last.
+// The vendor's uv.config.js won't conflict with our uv.config.js inside the publicPath directory.
+app.use("/uv/", express.static(uvPath));
 
-app.use((req, res, next) => {
-  if (bareServer.shouldRoute(req)) {
-    for (let i in blacklist) if (req.headers["x-bare-host"] === blacklist[i]) return res.send();
-    bareServer.routeRequest(req, res);
+// Error for everything else
+app.use((req, res) => {
+  res.status(404);
+  res.sendFile(join(__dirname, "404.html"));
+});
+
+const server = createServer();
+
+server.on("request", (req, res) => {
+  if (bare.shouldRoute(req)) {
+    bare.routeRequest(req, res);
   } else {
-    next();
+    app(req, res);
   }
 });
 
-app.use(express.static(path.join(__dirname, "dist")));
-
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "dist/index.html"));
-});
-
 server.on("upgrade", (req, socket, head) => {
-  if (bareServer.shouldRoute(req)) {
-    bareServer.routeUpgrade(req, socket, head);
+  if (bare.shouldRoute(req)) {
+    bare.routeUpgrade(req, socket, head);
   } else {
     socket.end();
   }
 });
 
-server.listen({
-  port: config.port
+let port = parseInt(process.env.PORT || "");
+
+if (isNaN(port)) port = 8080;
+
+server.on("listening", () => {
+  const address = server.address();
+
+  console.log(
+    `Listening on http://${
+      address.family === "IPv6" ? `[${address.address}]` : address.address
+    }:${address.port}`
+  );
 });
 
-console.log(`Server listening on port ${config.port}`);
+server.listen({
+  port,
+});
+// const config = {
+//   port: process.env.PORT || 3001,
+//   bare: "/bare/"
+// }
+// const __dirname = path.resolve();
+// const app = express();
+// const server = createServer(app);
+// const bareServer = BareServer(config.bare);
+
+// const blacklist = [
+//   "netflix.com",
+//   "www.netflix.com"
+// ];
+
+// app.use((req, res, next) => {
+//   if (bareServer.shouldRoute(req)) {
+//     for (let i in blacklist) if (req.headers["x-bare-host"] === blacklist[i]) return res.send();
+//     bareServer.routeRequest(req, res);
+//   } else {
+//     next();
+//   }
+// });
+
+// app.use(express.static(path.join(__dirname, "dist")));
+
+// app.use((req, res) => {
+//   res.sendFile(path.join(__dirname, "dist/index.html"));
+// });
+
+// server.on("upgrade", (req, socket, head) => {
+//   if (bareServer.shouldRoute(req)) {
+//     bareServer.routeUpgrade(req, socket, head);
+//   } else {
+//     socket.end();
+//   }
+// });
+
+// server.listen({
+//   port: config.port
+// });
+
+// console.log(`Server listening on port ${config.port}`);
