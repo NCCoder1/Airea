@@ -2,7 +2,7 @@ version: "2"
 services:
   airea:
     restart: unless-stopped
-    image: "motortruck1221/airea"
+    image: "ghcr.io/natant-network/airea:main"
     ports:
     #IMPORTANT: DO NOT CHANGE THE 6969 PART ONLY CHANGE THE <your port here> PART REMOVING THE <> AROUND IT
-      - <your port here>:3001
+      - <your port here>:8080
