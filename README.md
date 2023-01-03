@@ -50,5 +50,3 @@ $ pm2 start ecosystem.config.cjs --name airea
 ---
 More Documentation to come.
 ---
-##### Disclamer: This is a work in progress, and as such there might be weird bugs.
----
