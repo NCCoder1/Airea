@@ -16,22 +16,15 @@ jobs:
           # Github Personal Access Token
           gh_accesstoken: ${{ secrets.GH_TOKEN }}
           # Gitea Mirror Host URL
+          gh_username: ${{ secrets.GH_USERNAME }}
+          gh_accesstoken: ${{ secrets.GH_TOKEN }}
           gitea_host: ${{ secrets.GITEA_HOST }}
-          # Gitea Username
           gitea_username: ${{ secrets.GITEA_USERNAME }}
-          # Gitea Personal Access Token
           gitea_accesstoken: ${{ secrets.GITEA_TOKEN }}
-          # Custom Prefix For Repository When Mirroring Gists
           gitea_gist_prefix: "gist"
-          # Custom Prefix For Repository When Mirroring Gists
           gitea_gist_surfix: ""
-          # set to true to mirror all Gists Created By You
           gistsSource: true
-          # set to true to mirror all Gists Stared By You
           gistsStared: true
-          # set to true to mirror all Repository Stared By You
           repositoryStared: true
-          # set to true to mirror all Repository Created By You
           repositorySource: true
-          # set to true to mirror all Repository Forked By You
           repositoryForked: true
