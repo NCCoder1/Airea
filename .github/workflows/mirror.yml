@@ -11,11 +11,6 @@ jobs:
       - uses: varunsridharan/action-gitea-mirror@1.1
         name: "Sync"
         with:
-          # Github Username
-          gh_username: ${{ secrets.GH_USERNAME }}
-          # Github Personal Access Token
-          gh_accesstoken: ${{ secrets.GH_TOKEN }}
-          # Gitea Mirror Host URL
           gh_username: ${{ secrets.GH_USERNAME }}
           gh_accesstoken: ${{ secrets.GH_TOKEN }}
           gitea_host: ${{ secrets.GITEA_HOST }}
