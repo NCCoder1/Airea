@@ -18,8 +18,8 @@ jobs:
           gitea_accesstoken: ${{ secrets.GITEA_TOKEN }}
           gitea_gist_prefix: "gist"
           gitea_gist_surfix: ""
-          #gistsSource: true
-          #gistsStared: true
-          repositoryStared: true
-          repositorySource: true
-          repositoryForked: true
+          gistsSource: false
+          gistsStared: false
+          repositoryStared: false
+          repositorySource: false
+          repositoryForked: false
